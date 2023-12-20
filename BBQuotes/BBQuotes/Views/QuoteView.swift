@@ -16,7 +16,10 @@ struct QuoteView: View {
                     .frame(width: geometry.size.width * 2.7, height: geometry.size.height)
 
                 VStack {
-                    Text("\"You either run from things, or you face them, Mr. White\"")
+                    Spacer(minLength: 50)
+
+                    Text("\"You either run from things, or you face them, Mr. White.\"")
+                        .minimumScaleFactor(0.5)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.white)
                         .font(.title2)
@@ -38,7 +41,23 @@ struct QuoteView: View {
                             .background(.ultraThinMaterial)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                    .frame(width: geometry.size.width / 1.1, height: geometry.size.height / 1.9)
+                    .frame(width: geometry.size.width / 1.1, height: geometry.size.height / 1.8)
+
+                    Spacer()
+
+                    Button {
+
+                    } label: {
+                        Text("Get Random Quote")
+                            .font(.title)
+                            .foregroundStyle(.white)
+                            .padding()
+                            .background(.breakingBadGreen)
+                            .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                            .shadow(color: .breakingBadYellow, radius: 2)
+                    }
+
+                    Spacer(minLength: 100)
                 }
                 .frame(width: geometry.size.width)
 
