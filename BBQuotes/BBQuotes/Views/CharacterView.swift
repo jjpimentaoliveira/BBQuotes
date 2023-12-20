@@ -8,45 +8,53 @@
 import SwiftUI
 
 struct CharacterView: View {
+
+    let show: String
+    let character: Character
+
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .top) {
-                Image(.breakingbad)
+                Image(show.lowerNoSpaces)
                     .resizable()
                     .scaledToFit()
 
                 ScrollView {
                     VStack {
-                        Image(.jessepinkman)
-                            .resizable()
-                            .scaledToFill()
+                        AsyncImage(url: character.images.randomElement()) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            ProgressView()
+                        }
                     }
                     .frame(width: geometry.size.width / 1.2, height: geometry.size.height / 1.7)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .padding(.top, 60)
 
                     VStack(alignment: .leading) {
-                        Text("Jesse Pinkman")
+                        Text(character.name)
                             .font(.largeTitle)
                             .fontWeight(.semibold)
 
-                        Text("Portrayed By: Aaron Paul")
+                        Text("Portrayed By: \(character.portrayedBy)")
                             .font(.subheadline)
 
                         Divider()
 
-                        Text("Jesse Pinkman Character Info")
+                        Text("\(character.name) Character Info")
                             .font(.title2)
 
-                        Text("Born: 09-24-1984")
+                        Text("Born: \(character.birthday)")
 
                         Divider()
 
                         Text("Occupations:")
                             .font(.title2)
 
-                        ForEach(0..<3) { index in
-                            Text("• Occupation \(index)")
+                        ForEach(character.occupations, id: \.self) { occupation in
+                            Text("• \(occupation)")
                                 .font(.subheadline)
                         }
 
@@ -55,11 +63,15 @@ struct CharacterView: View {
                         Text("Nicknames:")
                             .font(.title2)
 
-                        ForEach(0..<3) { index in
-                            Text("• Nickname \(index)")
+                        if character.aliases.count > 0 {
+                            ForEach(character.aliases, id: \.self) { nickname in
+                                Text("• \(nickname)")
+                                    .font(.subheadline)
+                            }
+                        } else {
+                            Text("None")
                                 .font(.subheadline)
                         }
-
                     }
                     .padding([.leading, .bottom], 30)
                 }
@@ -70,5 +82,5 @@ struct CharacterView: View {
 }
 
 #Preview {
-    CharacterView()
+    CharacterView(show: Constants.bbName, character: Constants.previewCharacter)
 }
