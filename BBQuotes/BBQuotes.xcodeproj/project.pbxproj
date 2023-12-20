@@ -17,6 +17,7 @@
 		CAE912DF2B33314700D02048 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912DE2B33314700D02048 /* FetchController.swift */; };
 		CAE912E22B33366F00D02048 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912E12B33366F00D02048 /* Constants.swift */; };
 		CAE912E52B3340A500D02048 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912E42B3340A500D02048 /* ViewModel.swift */; };
+		CAE912E72B3344E800D02048 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912E62B3344E800D02048 /* QuoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CAE912DE2B33314700D02048 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
 		CAE912E12B33366F00D02048 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CAE912E42B3340A500D02048 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		CAE912E62B3344E800D02048 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE912CA2B332B8900D02048 /* ContentView.swift */,
+				CAE912E62B3344E800D02048 /* QuoteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				CAE912CB2B332B8900D02048 /* ContentView.swift in Sources */,
 				CAE912DB2B332EEC00D02048 /* Quote.swift in Sources */,
 				CAE912C92B332B8900D02048 /* BBQuotesApp.swift in Sources */,
+				CAE912E72B3344E800D02048 /* QuoteView.swift in Sources */,
 				CAE912DF2B33314700D02048 /* FetchController.swift in Sources */,
 				CAE912DD2B332F3F00D02048 /* Character.swift in Sources */,
 				CAE912E22B33366F00D02048 /* Constants.swift in Sources */,
