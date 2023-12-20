@@ -12,6 +12,8 @@
 		CAE912CD2B332B8B00D02048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE912CC2B332B8B00D02048 /* Assets.xcassets */; };
 		CAE912D02B332B8B00D02048 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE912CF2B332B8B00D02048 /* Preview Assets.xcassets */; };
 		CAE912D72B332BFC00D02048 /* samplecharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = CAE912D62B332BFC00D02048 /* samplecharacter.json */; };
+		CAE912DB2B332EEC00D02048 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912DA2B332EEC00D02048 /* Quote.swift */; };
+		CAE912DD2B332F3F00D02048 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912DC2B332F3F00D02048 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		CAE912CC2B332B8B00D02048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAE912CF2B332B8B00D02048 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CAE912D62B332BFC00D02048 /* samplecharacter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = samplecharacter.json; sourceTree = "<group>"; };
+		CAE912DA2B332EEC00D02048 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		CAE912DC2B332F3F00D02048 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE912C82B332B8900D02048 /* BBQuotesApp.swift */,
+				CAE912D92B332EE300D02048 /* Models */,
 				CAE912D82B332C3400D02048 /* Views */,
 				CAE912D62B332BFC00D02048 /* samplecharacter.json */,
 				CAE912CC2B332B8B00D02048 /* Assets.xcassets */,
@@ -76,6 +81,15 @@
 				CAE912CA2B332B8900D02048 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CAE912D92B332EE300D02048 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAE912DA2B332EEC00D02048 /* Quote.swift */,
+				CAE912DC2B332F3F00D02048 /* Character.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE912CB2B332B8900D02048 /* ContentView.swift in Sources */,
+				CAE912DB2B332EEC00D02048 /* Quote.swift in Sources */,
 				CAE912C92B332B8900D02048 /* BBQuotesApp.swift in Sources */,
+				CAE912DD2B332F3F00D02048 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
