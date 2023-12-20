@@ -14,62 +14,64 @@ struct QuoteView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Image(show.lowercased().filter { $0 != " " })
+                Image(show.lowerNoSpaces)
                     .resizable()
                     .frame(width: geometry.size.width * 2.7, height: geometry.size.height)
 
                 VStack {
-                    Spacer(minLength: 50)
+                    VStack {
+                        Spacer(minLength: 50)
 
-                    switch viewModel.status {
-                    case .notStarted:
-                        EmptyView()
+                        switch viewModel.status {
+                        case .notStarted:
+                            EmptyView()
 
-                    case .fetching:
-                        ProgressView()
+                        case .fetching:
+                            ProgressView()
 
-                    case .success(let data):
-                        Text("\"\(data.quote.quote)\"")
-                            .minimumScaleFactor(0.5)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.white)
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .padding()
-                            .background(.black.opacity(0.5))
-                            .clipShape(RoundedRectangle(cornerRadius: 25))
-                            .padding()
+                        case .success(let data):
+                            Text("\"\(data.quote.quote)\"")
+                                .minimumScaleFactor(0.5)
+                                .multilineTextAlignment(.center)
+                                .foregroundStyle(.white)
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .padding()
+                                .background(.black.opacity(0.5))
+                                .clipShape(RoundedRectangle(cornerRadius: 25))
+                                .padding()
 
-                        ZStack(alignment: .bottom) {
-                            AsyncImage(url: data.character.images[0]) { image in
-                                image
-                                    .resizable()
-                                    .scaledToFill()
-                            } placeholder: {
-                                ProgressView()
+                            ZStack(alignment: .bottom) {
+                                AsyncImage(url: data.character.images[0]) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(
+                                    width: geometry.size.width / 1.1,
+                                    height: geometry.size.height / 1.8
+                                )
+
+                                Text(data.character.name)
+                                    .foregroundStyle(.white)
+                                    .padding(10)
+                                    .frame(maxWidth: .infinity)
+                                    .background(.ultraThinMaterial)
                             }
+                            .clipShape(RoundedRectangle(cornerRadius: 20.0))
                             .frame(
                                 width: geometry.size.width / 1.1,
                                 height: geometry.size.height / 1.8
                             )
 
-                            Text(data.character.name)
-                                .foregroundStyle(.white)
-                                .padding(10)
-                                .frame(maxWidth: .infinity)
-                                .background(.ultraThinMaterial)
+                        case .failed:
+                            EmptyView()
                         }
-                        .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                        .frame(
-                            width: geometry.size.width / 1.1,
-                            height: geometry.size.height / 1.8
-                        )
 
-                    case .failed:
-                        EmptyView()
+                        Spacer()
                     }
-
-                    Spacer()
 
                     Button {
                         Task {
@@ -80,9 +82,9 @@ struct QuoteView: View {
                             .font(.title)
                             .foregroundStyle(.white)
                             .padding()
-                            .background(.breakingBadGreen)
+                            .background(Color("\(show.noSpaces)Button"))
                             .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                            .shadow(color: .breakingBadYellow, radius: 2)
+                            .shadow(color: Color("\(show.noSpaces)Shadow"), radius: 2)
                     }
 
                     Spacer(minLength: 100)
@@ -96,6 +98,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: "Breaking Bad")
+    QuoteView(show: Constants.bcsName)
         .preferredColorScheme(.dark)
 }

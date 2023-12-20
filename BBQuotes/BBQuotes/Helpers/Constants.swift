@@ -7,8 +7,21 @@
 
 import Foundation
 
+enum Constants {
+    static let bbName = "Breaking Bad"
+    static let bcsName = "Better Call Saul"
+}
+
 extension String {
     var replaceWhitespaceWithPlus: String {
-        self.replacingOccurrences(of: " ", with: "+")
+        replacingOccurrences(of: " ", with: "+")
+    }
+
+    var noSpaces: String {
+        replacingOccurrences(of: " ", with: "")
+    }
+
+    var lowerNoSpaces: String {
+        noSpaces.lowercased()
     }
 }
