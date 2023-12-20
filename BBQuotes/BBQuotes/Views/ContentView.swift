@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            QuoteView(show: "Breaking Bad")
-                .tabItem { Label("Breaking Bad", systemImage: "tortoise") }
+            QuoteView(show: Constants.bbName)
+                .tabItem { Label(Constants.bbName, systemImage: "tortoise") }
 
-            Text("Better Call Saul View")
-                    .tabItem { Label("Better Call Saul", systemImage: "briefcase") }
+            QuoteView(show: Constants.bcsName)
+                    .tabItem { Label(Constants.bcsName, systemImage: "briefcase") }
         }
         .onAppear {
             UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
