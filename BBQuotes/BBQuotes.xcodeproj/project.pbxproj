@@ -16,6 +16,7 @@
 		CAE912DD2B332F3F00D02048 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912DC2B332F3F00D02048 /* Character.swift */; };
 		CAE912DF2B33314700D02048 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912DE2B33314700D02048 /* FetchController.swift */; };
 		CAE912E22B33366F00D02048 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912E12B33366F00D02048 /* Constants.swift */; };
+		CAE912E52B3340A500D02048 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE912E42B3340A500D02048 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CAE912DC2B332F3F00D02048 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		CAE912DE2B33314700D02048 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
 		CAE912E12B33366F00D02048 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CAE912E42B3340A500D02048 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				CAE912DE2B33314700D02048 /* FetchController.swift */,
 				CAE912D82B332C3400D02048 /* Views */,
 				CAE912D92B332EE300D02048 /* Models */,
+				CAE912E32B33408000D02048 /* ViewModels */,
 				CAE912E02B33365D00D02048 /* Helpers */,
 				CAE912D62B332BFC00D02048 /* samplecharacter.json */,
 				CAE912CC2B332B8B00D02048 /* Assets.xcassets */,
@@ -104,6 +107,14 @@
 				CAE912E12B33366F00D02048 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CAE912E32B33408000D02048 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CAE912E42B3340A500D02048 /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				CAE912DF2B33314700D02048 /* FetchController.swift in Sources */,
 				CAE912DD2B332F3F00D02048 /* Character.swift in Sources */,
 				CAE912E22B33366F00D02048 /* Constants.swift in Sources */,
+				CAE912E52B3340A500D02048 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
